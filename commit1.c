@@ -120,3 +120,63 @@ int main()
 				}
 			}
 		}
+		int l=e+1;
+		double q[l];
+		int z=4,k,o;
+		for( k=0;k<l-1;k++)
+		{ 
+			for( o=0;o<n;o++)
+			{ 
+				if(c[k]==p[o].pid)
+				{
+					q[k]=1+(double)(t-p[o].at)/p[o].bt;
+				}
+			}
+		}
+		selectionSort(q,c,l-1);
+		int f=c[0],i;
+		for(i=0;i<n;i++) 
+		{ 
+			if(e!=0)
+			{
+				if(p[i].pid==f)
+				{
+					t=t+p[i].bt;
+				}
+			}
+		}
+		int w=5;
+		if(e==0 && v>0)
+		{
+			for(i=0;i<n;i++)
+			{ 
+				if(t<p[i].at)
+				{
+     				t=p[i].at+p[i].bt;
+					printf(" %d P%d %d",p[i].at,p[i].pid,t);
+					
+					break;
+					w=9;
+				} 
+			}
+		}
+		else
+		{
+			printf(" P%d %d",f,t);
+			ct[f]=t;//2
+		//	printf("**%d",ct[f]);//3
+			v--;
+		}
+	      	for(i=0; i<m; i++) 
+			{
+				if(b[i]==f)
+				{
+					for(j=i; j<(m-1); j++) 
+					{
+						b[j]=b[j+1];
+					}
+			    	break;
+				}
+			}
+			m=m-1;
+	}
