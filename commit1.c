@@ -180,3 +180,37 @@ int main()
 			}
 			m=m-1;
 	}
+	while(m>0);
+	     
+	    float s1=0,s2=0;
+		for (i=0;i<n;i++) 
+		{
+			tat[i]=ct[i+1]-p[i].at;
+        }
+	     
+	    for (i=0;i<n;i++) 
+		{
+			wt[i]=tat[i]-p[i].bt;
+        }
+	 
+	 for(i=0;i<n;i++)
+	 {
+	 s1=s1+tat[i];
+	 s2=s2+wt[i];
+	 }
+	 
+	 printf("\n\n\nProcessId\tArrival time\tBurst time\tTurnAround Time\tWating Time");
+	for(i=0;i<n;i++) 
+	{
+		printf("\n%d\t\t%d\t\t%d\t\t%d\t\t%d\n",p[i].pid,p[i].at,p[i].bt,tat[i],wt[i]);
+    }
+	     
+	float avgwt,avgtat;
+	avgtat=s1/n;
+	avgwt=s2/n;
+	printf("\n\n");
+	printf("Average TurnAround Time=%f",avgtat);
+	printf("\nAverage Waiting Time=%f",avgwt);
+	
+}
+
